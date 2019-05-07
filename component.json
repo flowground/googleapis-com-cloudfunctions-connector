@@ -1,0 +1,271 @@
+{
+    "title": "Cloud Functions",
+    "description": "Manages lightweight user-provided functions executed in response to events.",
+    "docsUrl": "https://cloud.google.com/functions",
+    "url": "https://api.apis.guru/v2/specs/googleapis.com/cloudfunctions/v1/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://cloudfunctions.googleapis.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "Oauth2": {
+                "label": "Oauth 2.0 authentication",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "cloudfunctions_operations_list": {
+            "main": "./lib/actions/cloudfunctions_operations_list.js",
+            "title": "Lists operations that match the specified filter in the request. If the\nserver doesn't support this method, it returns `UNIMPLEMENTED`.\n\nNOTE: the `name` binding allows API services to override the binding\nto use different resource name schemes, such as `users/*/operations`. To\noverride the binding, API services can add a binding such as\n`\"/v1/{name=users/*}/operations\"` to their service configuration.\nFor backwards compatibility, the default name includes the operations\ncollection id, however overriding users must ensure the name binding\nis the parent resource, without the operations collection id.",
+            "description": "Lists operations that match the specified filter in the request. If the\nserver doesn't support this method, it returns `UNIMPLEMENTED`.\n\nNOTE: the `name` binding allows API services to override the binding\nto use different resource name schemes, such as `users/*/operations`. To\noverride the binding, API services can add a binding such as\n`\"/v1/{name=users/*}/operations\"` to their service configuration.\nFor backwards compatibility, the default name includes the operations\ncollection id, however overriding users must ensure the name binding\nis the parent resource, without the operations collection id.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudfunctions_operations_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudfunctions_projects_locations_functions_create": {
+            "main": "./lib/actions/cloudfunctions_projects_locations_functions_create.js",
+            "title": "Creates a new function. If a function with the given name already exists in\nthe specified project, the long running operation will return\n`ALREADY_EXISTS` error.",
+            "description": "Creates a new function. If a function with the given name already exists in\nthe specified project, the long running operation will return\n`ALREADY_EXISTS` error.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudfunctions_projects_locations_functions_create.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudfunctions_projects_locations_functions_delete": {
+            "main": "./lib/actions/cloudfunctions_projects_locations_functions_delete.js",
+            "title": "Deletes a function with the given name from the specified project. If the\ngiven function is used by some trigger, the trigger will be updated to\nremove this function.",
+            "description": "Deletes a function with the given name from the specified project. If the\ngiven function is used by some trigger, the trigger will be updated to\nremove this function.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudfunctions_projects_locations_functions_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudfunctions_operations_get": {
+            "main": "./lib/actions/cloudfunctions_operations_get.js",
+            "title": "Gets the latest state of a long-running operation.  Clients can use this\nmethod to poll the operation result at intervals as recommended by the API\nservice.",
+            "description": "Gets the latest state of a long-running operation.  Clients can use this\nmethod to poll the operation result at intervals as recommended by the API\nservice.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudfunctions_operations_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudfunctions_projects_locations_functions_patch": {
+            "main": "./lib/actions/cloudfunctions_projects_locations_functions_patch.js",
+            "title": "Updates existing function.",
+            "description": "Updates existing function.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudfunctions_projects_locations_functions_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudfunctions_projects_locations_list": {
+            "main": "./lib/actions/cloudfunctions_projects_locations_list.js",
+            "title": "Lists information about the supported locations for this service.",
+            "description": "Lists information about the supported locations for this service.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudfunctions_projects_locations_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudfunctions_projects_locations_functions_call": {
+            "main": "./lib/actions/cloudfunctions_projects_locations_functions_call.js",
+            "title": "Synchronously invokes a deployed Cloud Function. To be used for testing\npurposes as very limited traffic is allowed. For more information on\nthe actual limits, refer to\n[Rate Limits](https://cloud.google.com/functions/quotas#rate_limits).",
+            "description": "Synchronously invokes a deployed Cloud Function. To be used for testing\npurposes as very limited traffic is allowed. For more information on\nthe actual limits, refer to\n[Rate Limits](https://cloud.google.com/functions/quotas#rate_limits).",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudfunctions_projects_locations_functions_call.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudfunctions_projects_locations_functions_generateDownloadUrl": {
+            "main": "./lib/actions/cloudfunctions_projects_locations_functions_generateDownloadUrl.js",
+            "title": "Returns a signed URL for downloading deployed function source code.\nThe URL is only valid for a limited period and should be used within\nminutes after generation.\nFor more information about the signed URL usage see:\nhttps://cloud.google.com/storage/docs/access-control/signed-urls",
+            "description": "Returns a signed URL for downloading deployed function source code.\nThe URL is only valid for a limited period and should be used within\nminutes after generation.\nFor more information about the signed URL usage see:\nhttps://cloud.google.com/storage/docs/access-control/signed-urls",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudfunctions_projects_locations_functions_generateDownloadUrl.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudfunctions_projects_locations_functions_list": {
+            "main": "./lib/actions/cloudfunctions_projects_locations_functions_list.js",
+            "title": "Returns a list of functions that belong to the requested project.",
+            "description": "Returns a list of functions that belong to the requested project.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudfunctions_projects_locations_functions_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudfunctions_projects_locations_functions_generateUploadUrl": {
+            "main": "./lib/actions/cloudfunctions_projects_locations_functions_generateUploadUrl.js",
+            "title": "Returns a signed URL for uploading a function source code.\nFor more information about the signed URL usage see:\nhttps://cloud.google.com/storage/docs/access-control/signed-urls.\nOnce the function source code upload is complete, the used signed\nURL should be provided in CreateFunction or UpdateFunction request\nas a reference to the function source code.\n\nWhen uploading source code to the generated signed URL, please follow\nthese restrictions:\n\n* Source file type should be a zip file.\n* Source file size should not exceed 100MB limit.\n* No credentials should be attached - the signed URLs provide access to the\n  target bucket using internal service identity; if credentials were\n  attached, the identity from the credentials would be used, but that\n  identity does not have permissions to upload files to the URL.\n\nWhen making a HTTP PUT request, these two headers need to be specified:\n\n* `content-type: application/zip`\n* `x-goog-content-length-range: 0,104857600`\n\nAnd this header SHOULD NOT be specified:\n\n* `Authorization: Bearer YOUR_TOKEN`",
+            "description": "Returns a signed URL for uploading a function source code.\nFor more information about the signed URL usage see:\nhttps://cloud.google.com/storage/docs/access-control/signed-urls.\nOnce the function source code upload is complete, the used signed\nURL should be provided in CreateFunction or UpdateFunction request\nas a reference to the function source code.\n\nWhen uploading source code to the generated signed URL, please follow\nthese restrictions:\n\n* Source file type should be a zip file.\n* Source file size should not exceed 100MB limit.\n* No credentials should be attached - the signed URLs provide access to the\n  target bucket using internal service identity; if credentials were\n  attached, the identity from the credentials would be used, but that\n  identity does not have permissions to upload files to the URL.\n\nWhen making a HTTP PUT request, these two headers need to be specified:\n\n* `content-type: application/zip`\n* `x-goog-content-length-range: 0,104857600`\n\nAnd this header SHOULD NOT be specified:\n\n* `Authorization: Bearer YOUR_TOKEN`",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudfunctions_projects_locations_functions_generateUploadUrl.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudfunctions_projects_locations_functions_getIamPolicy": {
+            "main": "./lib/actions/cloudfunctions_projects_locations_functions_getIamPolicy.js",
+            "title": "Gets the IAM access control policy for a function.\nReturns an empty policy if the function exists and does not have a policy\nset.",
+            "description": "Gets the IAM access control policy for a function.\nReturns an empty policy if the function exists and does not have a policy\nset.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudfunctions_projects_locations_functions_getIamPolicy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudfunctions_projects_locations_functions_setIamPolicy": {
+            "main": "./lib/actions/cloudfunctions_projects_locations_functions_setIamPolicy.js",
+            "title": "Sets the IAM access control policy on the specified function.\nReplaces any existing policy.",
+            "description": "Sets the IAM access control policy on the specified function.\nReplaces any existing policy.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudfunctions_projects_locations_functions_setIamPolicy.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "cloudfunctions_projects_locations_functions_testIamPermissions": {
+            "main": "./lib/actions/cloudfunctions_projects_locations_functions_testIamPermissions.js",
+            "title": "Tests the specified permissions against the IAM access control policy\nfor a function.\nIf the function does not exist, this will return an empty set of\npermissions, not a NOT_FOUND error.",
+            "description": "Tests the specified permissions against the IAM access control policy\nfor a function.\nIf the function does not exist, this will return an empty set of\npermissions, not a NOT_FOUND error.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/cloudfunctions_projects_locations_functions_testIamPermissions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

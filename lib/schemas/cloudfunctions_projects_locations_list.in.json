@@ -1,0 +1,40 @@
+{
+    "type": "object",
+    "properties": {
+        "filter": {
+            "type": "string"
+        },
+        "name": {
+            "required": true,
+            "type": "string"
+        },
+        "pageSize": {
+            "type": "integer"
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "uploadType": {
+            "type": "string"
+        },
+        "upload_protocol": {
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,59 @@
+{
+    "type": "object",
+    "properties": {
+        "resource": {
+            "required": true,
+            "type": "string"
+        },
+        "access_token": {
+            "type": "string"
+        },
+        "alt": {
+            "type": "string",
+            "enum": [
+                "json",
+                "media",
+                "proto"
+            ],
+            "default": "json"
+        },
+        "callback": {
+            "type": "string"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "uploadType": {
+            "type": "string"
+        },
+        "upload_protocol": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Request message for `TestIamPermissions` method.",
+            "properties": {
+                "permissions": {
+                    "description": "The set of permissions to check for the `resource`. Permissions with\nwildcards (such as '*' or 'storage.*') are not allowed. For more\ninformation see\n[IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        }
+    }
+}
